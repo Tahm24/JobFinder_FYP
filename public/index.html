@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Upload Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <h2>Resume Upload</h2>
+            <div class="profile-icon">👤</div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <!-- Resume Box -->
+            <div class="box resume-box">
+                <h3>Resume</h3>
+                <div id="resume-text">Upload a file to see its content here...</div>
+
+                <!-- Upload Form -->
+                <div class="upload-section">
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <label for="resume"><strong>Upload your resume:</strong></label><br><br>
+                        <input type="file" name="resume" id="resume" required>
+                        <button type="submit">Upload</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results Box -->
+            <div class="box">
+                <h3>Results</h3>
+                <div id="results">Extracted details will appear here...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
