@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload CV</title>
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div class="upload-container">
+    <h1>Upload Your CV (.docx)</h1>
+    <form method="POST" action="/upload-cv" enctype="multipart/form-data">
+      <div class="custom-file-input">
+        <label class="file-label">
+          Choose .docx File
+          <input type="file" name="cvFile" accept=".docx" required onchange="showFileName(this)">
+        </label>
+      </div>
+      <div id="file-name">No file selected</div>
+      <button type="submit">Upload</button>
+    </form>
+  </div>
+
+  <script>
+    function showFileName(input) {
+      const fileName = input.files.length > 0 ? input.files[0].name : 'No file selected';
+      document.getElementById('file-name').textContent = fileName;
+    }
+  </script>
+</body>
+</html>

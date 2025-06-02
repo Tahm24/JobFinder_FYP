@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CV Analysis Results</title>
+  <link rel="stylesheet" href="/results.css">
+</head>
+<body>
+  <div class="panel left">
+    <h2>Your CV</h2>
+    <pre><%= cvText %></pre>
+
+    <% if (skills.length > 0) { %>
+      <h3>Skills</h3>
+      <div class="tag-container">
+        <% skills.forEach(skill => { %>
+          <div class="tag-box"><%= skill %></div>
+        <% }) %>
+      </div>
+    <% } %>
+
+    <% if (professions.length > 0) { %>
+      <h3>Profession</h3>
+      <div class="tag-container">
+        <% professions.forEach(profession => { %>
+          <div class="tag-box"><%= profession %></div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+
+  <div class="panel right">
+    <h2>Suggested Jobs</h2>
+    <% jobs.forEach(job => { %>
+      <div class="job">
+        <h3><%= job.title %> @ <%= job.company %></h3>
+        <p><strong>Location:</strong> <%= job.location %></p>
+        <p><%= job.description %></p>
+        <p class="skills"><strong>Skills:</strong> <%= job.skills.join(', ') %></p>
+        <p><strong>Match Score:</strong> <%= job.similarity.toFixed(2) %>%</p>
+      </div>
+    <% }); %>
+  </div>
+</body>
+</html>
